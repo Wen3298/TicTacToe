@@ -30,24 +30,23 @@ function detectarGanador() {
             arreListas[a].innerHTML === arreListas[c].innerHTML) {
             alert("¡Felicidades! ¡Hay un ganador!");
             return true;
+           
         }
+        
     }
     
     return false;
 }
-
 function jugador1(){
     arreListas.forEach(celda => celda.addEventListener("click",function(){
         if (!detectarGanador()) {
-           if( celda.innerHTML===""){
-            celda.innerHTML= "❌";
+           if(celda.innerHTML===""){
+               celda.innerHTML= "❌";
             juegoAleaotorio()
            }
         }
        
-        if (detectarGanador()) {
-            
-        }
+        
     }))
 
 }
@@ -56,13 +55,13 @@ function juegoAleaotorio() {
         
         let arreglosVacios = arreListas.filter(cel=>cel.innerHTML==="")
         let aleatorio = Math.floor(Math.random() * arreglosVacios.length)
-    
+        if(!detectarGanador()){
         if(arreglosVacios.length>0){
             arreglosVacios[aleatorio].innerHTML = "🔵"
         }
-    }, 1000);
+    }
+    }, 500);
     
 }
-
 jugador1()
 

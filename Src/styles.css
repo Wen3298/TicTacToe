@@ -14,11 +14,17 @@ body{
     font-size: 3rem;
     display: grid;
     place-items:center;
-    border: 1px solid #cd22bf ;
+    border: 1px solid#ff56ee;
     float: left;
+    cursor:pointer;
 }
 .Contenedor {
     width: 276px;
     text-align: center;
 
 }
+.celda:hover{
+    background-color: #1eff05;
+   
+  }
+  
