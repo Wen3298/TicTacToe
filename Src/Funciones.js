@@ -7,6 +7,7 @@ let Celda6 = document.getElementById("celda6")
 let Celda7 = document.getElementById("celda7")
 let Celda8 = document.getElementById("celda8")
 let Celda9 = document.getElementById("celda9")
+
 //Hago un arreglo de todas las celdas
 let arreListas = [Celda1,Celda2,Celda3,Celda4,Celda5,Celda6,Celda7,Celda8,Celda9]
 
@@ -32,6 +33,12 @@ function detectarGanador() {
             return true;
            
         }
+        let empate = arreListas.every(celda => celda.innerHTML !== "");
+    if (empate) {
+        alert("¡Hay un empate!");
+        juegoTerminado = true;
+        return true;
+    }
         
     }
     
@@ -64,4 +71,9 @@ function juegoAleaotorio() {
     
 }
 jugador1()
+
+let btnEmpezar = document.getElementById("btn");
+btnEmpezar.addEventListener('click', _ => {
+            location.reload();
+})
 
